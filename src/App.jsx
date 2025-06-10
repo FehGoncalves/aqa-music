@@ -1,0 +1,17 @@
+import { Button } from "./components/Button";
+
+
+
+const App = () => {
+  return (
+    <div className="flex flex-col h-screen items-center justify-center bg-[#2C2C2C] text-red-700">
+      <figure className="flex items-center">
+        <img src='./Logo-2.png' alt="" width={200} height={200} />
+      </figure>
+
+     
+    </div>
+  );
+}
+
+export default App;
