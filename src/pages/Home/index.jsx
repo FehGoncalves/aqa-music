@@ -9,13 +9,13 @@ export const HomePage = () => {
             </figure>
 
             <div className="my-10 w-full flex justify-center">
-                <Button><Link to='/login'>Entrar</Link></Button>
+                <Button variant='primary'><Link to='/login'>Entrar</Link></Button>
             </div>
 
             <article className="flex flex-col w-full items-center gap-2">
                 <p className="text-[#F1F1F1]">se não tem uma conta, cadastre-se já!</p>
 
-                <Button ><Link to='/cadastro'>Cadastre-se</Link></Button>
+                <Button variant='primary'><Link to='/cadastro'>Cadastre-se</Link></Button>
             </article>
 
 
