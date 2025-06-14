@@ -6,6 +6,7 @@ import {
 import { HomePage } from "./pages/Home";
 import { SignUpPage } from "./pages/Cadastro";
 import { SignInPage } from "./pages/Login";
+import { FeedPage } from "./pages/Feed";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/cadastro" element={<SignUpPage />} />
         <Route path="/login" element={<SignInPage />} />
+        <Route path="/feed" element={<FeedPage />} />
       </Routes>
     </BrowserRouter>
   );
