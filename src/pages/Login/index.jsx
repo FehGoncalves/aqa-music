@@ -1,7 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { InputField } from "../../components/InputField";
 
 export const SignInPage = () => {
+    const navigate = useNavigate();
+
+    const handleSubmit = event => {
+        event.preventDefault()
+
+        navigate('/feed')
+    }
+
     return (
         <div className="flex flex-col lg:h-screen items-center justify-center bg-[#2C2C2C] p-8">
 
@@ -10,7 +19,7 @@ export const SignInPage = () => {
             </figure>
 
             <section className="bg-slate-600 w-full p-6 rounded-lg flex flex-col items-center justify-center max-w-md">
-                <form className="flex flex-col w-full gap-4 text-[#F1F1F1]">
+                <form onSubmit={handleSubmit} className="flex flex-col w-full gap-4 text-[#F1F1F1]">
                     <h1 className="text-center text-3xl text-neutral-50 font-bold">Faça o seu login</h1>
 
                     <InputField name='email' id='email' type='email' label="E-mail" />
