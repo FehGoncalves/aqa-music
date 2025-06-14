@@ -1,7 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { InputField } from "../../components/InputField";
 
 export const SignUpPage = () => {
+ const navigate = useNavigate();
+
+    const handleSubmit = event => {
+        event.preventDefault()
+
+        navigate('/feed')
+    }
+
     return (
         <div className="flex flex-col items-center justify-center bg-[#2C2C2C] p-8">
             <section className="bg-slate-600 w-full p-6 rounded-lg flex flex-col items-center justify-center max-w-md">
@@ -9,7 +18,7 @@ export const SignUpPage = () => {
                     <img src='./Logo-2.png' alt="" width={200} height={200} />
                 </figure>
 
-                <form className="flex flex-col w-full gap-4">
+                <form onSubmit={handleSubmit} className="flex flex-col w-full gap-4">
                     <InputField label='Nome completo' />
                     <InputField label='Nome fantasia' />
 
