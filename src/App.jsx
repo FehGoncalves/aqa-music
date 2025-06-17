@@ -7,6 +7,7 @@ import { HomePage } from "./pages/Home";
 import { SignUpPage } from "./pages/Cadastro";
 import { SignInPage } from "./pages/Login";
 import { FeedPage } from "./pages/Feed";
+import { UploadPage } from "./pages/Upload";
 
 
 const App = () => {
@@ -17,6 +18,8 @@ const App = () => {
         <Route path="/cadastro" element={<SignUpPage />} />
         <Route path="/login" element={<SignInPage />} />
         <Route path="/feed" element={<FeedPage />} />
+        <Route path="/upload" element={<UploadPage />} />
+
       </Routes>
     </BrowserRouter>
   );

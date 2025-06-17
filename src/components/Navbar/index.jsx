@@ -14,10 +14,18 @@ export const Navbar = () => {
             </form>
 
             <ul className="list-none flex gap-6 text-lg font-semibold">
-                <li className="cursor-pointer hover:underline flex items-center justify-center text-nowrap"><Link to='/'>Feed</Link></li>
-                <li className="cursor-pointer hover:underline flex items-center justify-center text-nowrap"><Link to='/'>Podcasts</Link></li>
-                <li className="cursor-pointer hover:underline flex items-center justify-center text-nowrap"><Link to='/'>Upload</Link></li>
-                <li className="cursor-pointer hover:underline flex items-center justify-center text-nowrap"><Link to='/'>Músicas Salva</Link></li>
+                <li className="cursor-pointer hover:underline flex items-center justify-center text-nowrap">
+                    <Link to='/feed'>Feed</Link>
+                </li>
+                <li className="cursor-pointer hover:underline flex items-center justify-center text-nowrap">
+                    <Link to='/'>Podcasts</Link>
+                </li>
+                <li className="cursor-pointer hover:underline flex items-center justify-center text-nowrap">
+                    <Link to='/upload'>Upload</Link>
+                </li>
+                <li className="cursor-pointer hover:underline flex items-center justify-center text-nowrap">
+                    <Link to='/'>Músicas Salva</Link>
+                </li>
             </ul>
         </aside>
     )
