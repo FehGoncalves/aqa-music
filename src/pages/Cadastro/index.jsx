@@ -11,8 +11,8 @@ export const SignUpPage = () => {
     const [name, setName] = useState('')
     const [fantasyname, setFantasyName] = useState('')
     const [email, setEmail] = useState('')
-    const [telefone, setTelefone] = useState('')
-    const [senha, setSenha] = useState('')
+    const [phone, setPhone] = useState('')
+    const [password, setPassword] = useState('')
 
     const handleSubmit = async event => {
         event.preventDefault()
@@ -53,26 +53,36 @@ export const SignUpPage = () => {
                     <InputField label='Nome fantasia'
                         name='fantasyname'
                         id='Fantasyname'
-                        onChange={event => setName(event.target.value)}
+                        onChange={event => setFantasyName(event.target.value)}
                         value={fantasyname}
                     />
 
                     <section className="grid lg:grid-cols-2 gap-4">
-                        <InputField 
-                        label='E-mail'
+                        <InputField
+                            label='E-mail'
                             name='E-mail'
                             id='E-mail'
-                            onChange={event => setName(event.target.value)}
+                            onChange={event => setEmail(event.target.value)}
                             value={email} />
                         <InputField
                             label='Telefone'
                             name='telefone'
                             id='telefone'
-                            onChange={event => setName(event.target.value)}
-                            value={telefone} />
+                            onChange={event => setPhone(event.target.value)}
+                            value={phone} />
                     </section>
 
-                    <InputField name='password' id='password' key='password' type='password' label="Senha" />
+                    <InputField
+                        name='password'
+                        id='password'
+                        key='password'
+                        type='password'
+                        label="Senha"
+                        name='t'
+                        id='telefone'
+                        onChange={event => setPassword(event.target.value)}
+                        value={phone}
+                    />
 
                     <Button variant='secondary'>Finalizar cadastro</Button>
                 </form>
