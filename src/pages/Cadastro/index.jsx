@@ -1,14 +1,38 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 import { Button } from "../../components/Button";
 import { InputField } from "../../components/InputField";
 
 export const SignUpPage = () => {
- const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    const handleSubmit = event => {
+    const [name, setName] = useState('')
+    const [fantasyname, setFantasyName] = useState('')
+    const [email, setEmail] = useState('')
+    const [telefone, setTelefone] = useState('')
+    const [senha, setSenha] = useState('')
+
+    const handleSubmit = async event => {
         event.preventDefault()
 
-        navigate('/feed')
+        try {
+            const payload = {
+                name
+            }
+
+            const response = await axios.post('http://10.13.1.11:3333/api/user', payload)
+
+            if (response.status === 200) {
+                localStorage.setItem('user', JSON.stringify(response.data))
+
+                navigate('/feed')
+
+            }
+        } catch (error) {
+            console.error({ error })
+        }
     }
 
     return (
@@ -19,15 +43,36 @@ export const SignUpPage = () => {
                 </figure>
 
                 <form onSubmit={handleSubmit} className="flex flex-col w-full gap-4">
-                    <InputField label='Nome completo' />
-                    <InputField label='Nome fantasia' />
+                    <InputField
+                        label='Nome completo'
+                        name='name'
+                        id='name'
+                        onChange={event => setName(event.target.value)}
+                        value={name}
+                    />
+                    <InputField label='Nome fantasia'
+                        name='fantasyname'
+                        id='Fantasyname'
+                        onChange={event => setName(event.target.value)}
+                        value={fantasyname}
+                    />
 
                     <section className="grid lg:grid-cols-2 gap-4">
-                        <InputField label='E-mail' />
-                        <InputField label='Telefone' />
+                        <InputField 
+                        label='E-mail'
+                            name='E-mail'
+                            id='E-mail'
+                            onChange={event => setName(event.target.value)}
+                            value={email} />
+                        <InputField
+                            label='Telefone'
+                            name='telefone'
+                            id='telefone'
+                            onChange={event => setName(event.target.value)}
+                            value={telefone} />
                     </section>
 
-                    <InputField label='Senha' />
+                    <InputField name='password' id='password' key='password' type='password' label="Senha" />
 
                     <Button variant='secondary'>Finalizar cadastro</Button>
                 </form>
