@@ -26,7 +26,7 @@ export const SignUpPage = () => {
                 password
             }
 
-            const response = await axios.post('http://10.13.1.14:3333/api/user', payload)
+            const response = await axios.post('http://10.13.1.11:3333/api/user', payload)
 
             if (response.status === 200) {
                 localStorage.setItem('user', JSON.stringify(response.data))
@@ -59,7 +59,7 @@ export const SignUpPage = () => {
                         onChange={event => setFantasyName(event.target.value)}
                         value={fantasyName}
                     />
-
+                    
                     <section className="grid lg:grid-cols-2 gap-4">
                         <InputField
                             label='E-mail'
