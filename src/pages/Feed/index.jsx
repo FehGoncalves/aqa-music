@@ -16,8 +16,8 @@ export const FeedPage = () => {
                                     <button><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#92ADFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></button>
 
                                     <h3>O nome dela é LEO</h3>
-                                    <h3>Cantor</h3>
                                 </section>
+                                    <h3>Cantor</h3>
 
                                 <h3>Neutro</h3>
 
