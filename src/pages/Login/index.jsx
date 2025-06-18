@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { InputField } from "../../components/InputField";
 import { useState } from "react";
+import axios from "axios";
 
 export const SignInPage = () => {
     const navigate = useNavigate();
@@ -9,12 +10,26 @@ export const SignInPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault()
 
-        navigate('/feed')
-    }
+        try {
+            const payload = {
+                email,
+                password
+            }
 
+            const response = await axios.post('http://10.13.1.11:3333/api/auth', payload)
+
+            if (response.status === 200) {
+                localStorage.setItem('user', JSON.stringify(response.data))
+
+                navigate('/feed')
+            }
+        } catch (error) {
+            console.error({ error })
+        }
+    }
     return (
         <div className="flex flex-col lg:h-screen items-center justify-center bg-[#2C2C2C] p-8">
 
