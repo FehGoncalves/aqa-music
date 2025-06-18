@@ -1,7 +1,7 @@
 export const Button = props => {
     const VARIANTS = {
         primary: "bg-[#525B76] max-w-xs",
-        secondary: "bg-[#525B76] w-full"
+        secondary: "bg-[#201E50] w-full"
     }
 
     return (
