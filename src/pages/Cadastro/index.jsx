@@ -9,7 +9,7 @@ export const SignUpPage = () => {
     const navigate = useNavigate();
 
     const [name, setName] = useState('')
-    const [fantasyname, setFantasyName] = useState('')
+    const [fantasyName, setFantasyName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
@@ -19,16 +19,19 @@ export const SignUpPage = () => {
 
         try {
             const payload = {
-                name
+                name,
+                nickname: fantasyName,
+                email,
+                phone,
+                password
             }
 
-            const response = await axios.post('http://10.13.1.11:3333/api/user', payload)
+            const response = await axios.post('http://10.13.1.14:3333/api/user', payload)
 
             if (response.status === 200) {
                 localStorage.setItem('user', JSON.stringify(response.data))
 
                 navigate('/feed')
-
             }
         } catch (error) {
             console.error({ error })
@@ -54,20 +57,21 @@ export const SignUpPage = () => {
                         name='fantasyname'
                         id='Fantasyname'
                         onChange={event => setFantasyName(event.target.value)}
-                        value={fantasyname}
+                        value={fantasyName}
                     />
 
                     <section className="grid lg:grid-cols-2 gap-4">
                         <InputField
                             label='E-mail'
-                            name='E-mail'
-                            id='E-mail'
+                            name='email'
+                            id='email'
+                            type='email'
                             onChange={event => setEmail(event.target.value)}
                             value={email} />
                         <InputField
                             label='Telefone'
-                            name='telefone'
-                            id='telefone'
+                            name='phone'
+                            id='phone'
                             onChange={event => setPhone(event.target.value)}
                             value={phone} />
                     </section>
@@ -78,10 +82,8 @@ export const SignUpPage = () => {
                         key='password'
                         type='password'
                         label="Senha"
-                        name='t'
-                        id='telefone'
                         onChange={event => setPassword(event.target.value)}
-                        value={phone}
+                        value={password}
                     />
 
                     <Button variant='secondary'>Finalizar cadastro</Button>
