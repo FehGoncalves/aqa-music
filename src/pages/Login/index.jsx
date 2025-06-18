@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button";
 import { InputField } from "../../components/InputField";
+import { useState } from "react";
 
 export const SignInPage = () => {
     const navigate = useNavigate();
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const handleSubmit = event => {
         event.preventDefault()
@@ -22,8 +26,24 @@ export const SignInPage = () => {
                 <form onSubmit={handleSubmit} className="flex flex-col w-full gap-4 text-[#F1F1F1]">
                     <h1 className="text-center text-3xl text-neutral-50 font-bold">Faça o seu login</h1>
 
-                    <InputField name='email' id='email' type='email' label="E-mail" />
-                    <InputField name='password' id='password' type='password' label="Senha" />
+                    <InputField
+                        name='email'
+                        id='email'
+                        type='email'
+                        label="E-mail"
+                        onChange={event => setEmail(event.target.value)}
+                        value={email}
+
+                    />
+                    <InputField
+                        name='password'
+                        id='password'
+                        key='password'
+                        type='password'
+                        label="Senha"
+                        onChange={event => setPassword(event.target.value)}
+                        value={password}
+                    />
 
                     <Button variant='secondary'>Entrar</Button>
                 </form>
