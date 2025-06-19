@@ -26,7 +26,7 @@ export const SignUpPage = () => {
                 password
             }
 
-            const response = await axios.post('http://10.13.1.11:3333/api/user', payload)
+            const response = await axios.post('http://10.13.1.14:3333/api/user', payload)
 
             if (response.status === 200) {
                 localStorage.setItem('user', JSON.stringify(response.data))
