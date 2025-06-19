@@ -25,6 +25,8 @@ export const FeedPage = () => {
             <Navbar />
 
             <div className="flex flex-col items-center justify-center p-8 text-neutral-50">
+
+
                 <ul className="w-full list-none">
                     {songs.map((musica) => (
                         <li key={musica.id} className="border-b w-full p-4">
