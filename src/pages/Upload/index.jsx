@@ -48,15 +48,15 @@ export const UploadPage = () => {
                 }
             })
 
-            console.log({response})
+            console.log({ response })
 
         } catch (error) {
-           console.error({handleSubmitError:error})
+            console.error({ handleSubmitError: error })
         }
     };
 
     return (
-        <div className="w-full flex flex-col">
+        <div className="flex flex-col items-center justify-center bg-[#2C2C2C] p-8">
             <Navbar />
 
             <div className="w-full flex flex-col p-8 items-center justify-center">
