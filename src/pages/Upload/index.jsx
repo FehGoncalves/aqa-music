@@ -42,7 +42,7 @@ export const UploadPage = () => {
         data.append("audio", formData.audio);
 
         try {
-            const response = await axios.post('http://10.13.1.14:3333/api/songs', data, {
+            const response = await axios.post('http://10.13.1.12:3333/api/songs', data, {
                 headers: {
                     'Authorization': `Bearer ${userData.token}`
                 }
@@ -56,7 +56,7 @@ export const UploadPage = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center bg-[#2C2C2C] p-8">
+        <div className="flex lg:min-h-screen flex-col items-center justify-center bg-[#2C2C2C] p-8">
             <Navbar />
 
             <div className="w-full flex flex-col p-8 items-center justify-center">

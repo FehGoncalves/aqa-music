@@ -19,7 +19,7 @@ export const SignInPage = () => {
                 password
             }
 
-            const response = await axios.post('http://10.13.1.14:3333/api/auth', payload)
+            const response = await axios.post('http://10.13.1.12:3333/api/auth', payload)
 
             if (response.status === 200) {
                 localStorage.setItem('user', JSON.stringify(response.data))
@@ -31,7 +31,7 @@ export const SignInPage = () => {
         }
     }
     return (
-        <div className="flex flex-col lg:h-screen items-center justify-center bg-[#2C2C2C] p-8">
+        <div className="flex flex-col lg:min-h-screen items-center justify-center bg-[#2C2C2C] p-8">
 
             <figure className="flex items-center">
                 <img src='./Logo-2.png' alt="" width={200} height={200} />
