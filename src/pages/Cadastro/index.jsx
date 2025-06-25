@@ -26,7 +26,7 @@ export const SignUpPage = () => {
                 password
             }
 
-            const response = await axios.post('http://10.13.1.14:3333/api/user', payload)
+            const response = await axios.post('http://10.13.1.12:3333/api/user', payload)
 
             if (response.status === 200) {
                 localStorage.setItem('user', JSON.stringify(response.data))
@@ -39,7 +39,7 @@ export const SignUpPage = () => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center bg-[#2C2C2C] p-8">
+        <div className="lg:min-h-screen flex flex-col items-center justify-center bg-[#2C2C2C] p-8">
             <section className="bg-slate-600 w-full p-6 rounded-lg flex flex-col items-center justify-center max-w-md">
                 <figure className="flex items-center">
                     <img src='./Logo-2.png' alt="" width={200} height={200} />
