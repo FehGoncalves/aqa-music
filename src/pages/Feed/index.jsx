@@ -8,7 +8,7 @@ export const FeedPage = () => {
     useEffect(() => {
         const fetchMusicas = async () => {
             try {
-                const response = await axios.get("http://10.13.1.14:3333/api/songs");
+                const response = await axios.get("http://10.13.1.12:3333/api/songs");
                 setSongs(response.data);
 
             } catch (error) {
@@ -21,7 +21,7 @@ export const FeedPage = () => {
 
 
     return (
-        <div className="flex flex-col bg-[#2C2C2C] min-h-screen">
+        <div className="flex flex-col bg-[#2C2C2C] lg:min-h-screen">
             <Navbar />
 
             <div className="flex flex-col items-center justify-center p-8 text-neutral-50">
